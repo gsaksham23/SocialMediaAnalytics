@@ -1,4 +1,4 @@
-# 📢 Social Media Analytics Using Hawkes' Process
+# Social Media Analytics Using Hawkes' Process
 
 This project models the virality and popularity of tweeted YouTube videos using **self-exciting Hawkes Processes** and neural networks. It combines temporal point process theory with machine learning to predict view counts based on tweet activity and external engagement factors.
 
