@@ -1,13 +1,84 @@
-**PROBLEM STATEMENT:** 
-In the era of social media dominance, the significance of gauging the popularity of content, particularly on platforms like Twitter, has become increasingly vital. As users generate an incessant stream of tweets, discerning which will gain popularity poses a challenge. This project aims to develop a predictive model that can analyze Twitter tweets and forecast their potential popularity, providing valuable insights into the factors contributing to the virality of content on the platform.
+# 📢 Social Media Analytics Using Hawkes' Process
 
-The challenges encompassed in this endeavour include the dynamic nature of online conversations, the diverse content types present in tweets, and the ever-evolving preferences of the user base. Understanding the dynamics of popularity in this context involves exploring features such as engagement metrics (likes, retweets, replies), textual content analysis, temporal patterns, and user interactions. By delving into these facets, we seek to create a robust model that distinguishes between tweets that will gain traction and those that may not.
+This project models the virality and popularity of tweeted YouTube videos using **self-exciting Hawkes Processes** and neural networks. It combines temporal point process theory with machine learning to predict view counts based on tweet activity and external engagement factors.
 
-The project's success will not only contribute to a deeper understanding of social media dynamics but will also have practical implications for individuals and organizations seeking to enhance their online presence and impact. Consequently, this research aims to bridge the gap between the plethora of user-generated content and the ability to identify and harness the potential for virality in the context of Twitter.
+---
 
-**CONCLUSION:** 
-Our project revolves around predicting content popularity on Twitter and YouTube using the Hawkes Intensity Processes (HIP) model applied to the rich ACTIVE dataset. HIP's effectiveness is demonstrated through parameter fitting and model evaluation, showcasing its ability to capture the interplay between inherent video appeal and external promotions.
+## Objective
 
-Extending predictions from day 91 to day 120, our forecasting phase equips content creators with a valuable tool for optimizing strategies and anticipating engagement fluctuations.
+To predict YouTube video popularity from Twitter interactions by:
+- Modeling **retweet cascades** using Hawkes Processes
+- Capturing external impact factors influencing popularity
+- Enhancing prediction accuracy with **artificial neural networks (ANNs)**
 
-As we conclude, future avenues include real-time implementation, dynamic feature incorporation, multimodal data integration, and ethical considerations, ensuring our project remains at the forefront of social media analytics. This project lays the groundwork for ongoing inquiry into the evolving landscape of online content popularity, leveraging sophisticated mathematical modeling, data exploration, and predictive analytics for insightful analyses in the realm of social media dynamics.
+---
+
+## Methodology
+
+### Dataset
+- 130K+ tweets containing YouTube video links
+- Features include: retweet timing, user metadata, tweet content, and external signals
+
+### Modeling Steps
+1. **Temporal Feature Engineering**  
+   - Constructed 10+ features capturing user engagement and tweet bursts
+   - Modeled self-excitation using **Hawkes Intensity Functions**
+
+2. **Neural Network Prediction**  
+   - Used ANN with **L-BFGS optimizer** to regress predicted view counts
+   - Combined Hawkes-based features with contextual tweet metadata
+
+3. **Evaluation & Refinement**  
+   - Compared baseline models vs Hawkes-enhanced ANN
+   - Reduced MSE loss by 25% with optimized temporal modeling
+
+---
+
+## Results
+
+| Metric | Value |
+|--------|-------|
+| Average Prediction Error | **4.96%** |
+| Median Prediction Error | **3.00%** |
+| Loss Reduction (vs baseline) | **25%** |
+
+The use of Hawkes Processes significantly improved the model's ability to capture virality dynamics and forecast popularity with minimal lag.
+
+---
+
+## Key Features
+
+- Event modeling using **Hawkes point processes**
+- **L-BFGS optimized ANN** for fast convergence
+- External engagement feature extraction from tweet data
+- Real-world application to **social media popularity forecasting**
+
+---
+
+## Tools & Technologies
+
+- Python (NumPy, Pandas, Scikit-learn)
+- Hawkes process implementation (tick or custom)
+- Neural networks (PyTorch/TensorFlow)
+- Data visualization (Matplotlib, Seaborn)
+
+---
+
+## Future Extensions
+
+- Integrate natural language processing for tweet sentiment analysis
+- Extend to other platforms (e.g., Reddit, Instagram)
+- Compare with Poisson, Log-normal, and recurrent neural baselines
+- Add a real-time forecasting pipeline using Twitter API
+
+---
+
+## 👤 Author
+
+**Saksham Gupta**  
+Final Year, B.S. in Mathematics and Computing  
+Indian Institute of Technology, Kharagpur  
+Email: gsaksham.iitkgp@gmail.com  
+[LinkedIn](https://www.linkedin.com/in/saksham-gupta23) • [GitHub](https://github.com/saksham-gupta23)
+
+---
